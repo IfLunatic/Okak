@@ -1,0 +1,109 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Белый контейнер формы */
+.form-wrapper {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Заголовок */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4b0082;
+  margin-bottom: 30px;
+}
+
+/* Форма */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Группа ввода с иконкой */
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Иконка слева */
+.icon {
+  position: absolute;
+  left: 12px;
+  color: #7b2ff7;
+  font-size: 22px;
+}
+
+/* Поля ввода */
+.input {
+  width: 100%;
+  padding: 12px 12px 12px 42px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: #bbb;
+}
+
+.input:focus {
+  border-color: #7b2ff7;
+  outline: none;
+  box-shadow: 0 0 8px #7b2ff7aa;
+}
+
+/* Кнопка */
+.btn {
+  background: #7b2ff7;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 0;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(123, 47, 247, 0.5);
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #5a20d6;
+}
+
+/* Кнопка переключения */
+.toggle {
+  margin-top: 25px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #7b2ff7;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #5a20d6;
+  text-decoration: underline;
+}
