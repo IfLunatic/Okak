@@ -42,6 +42,9 @@ function Navbar() {
           >
             Підтримати армію
           </a>
+          <Link to="/media-laws" onClick={() => setOpen(false)}>
+            Закони медіа
+          </Link>
         </div>
 
         <div
