@@ -1,11 +1,27 @@
 import React from "react";
+import "./Podcasts.css"; // Підключаємо стилі
 
 const podcasts = [
-  "https://www.youtube.com/watch?v=m4Q52Cem5cU",
-  "https://www.youtube.com/watch?v=TkWUNFB2IcM",
-  "https://www.youtube.com/watch?v=AuhneqQWFjk",
-  "https://www.youtube.com/watch?v=3nyvJn2Mzvc",
-  "https://www.youtube.com/watch?v=NbmDqSuZSnI",
+  {
+    title: "НАСІРОВ | Корупція, суди та мобілізація. СПРАВЕДЛИВІСТЬ ПІД ПРИЦІЛОМ | Подкаст",
+    url: "https://www.youtube.com/watch?v=m4Q52Cem5cU",
+  },
+  {
+    title: "МІЛЬЙОНИ ДОЛАРІВ на готелі в Буковелі: лакшері життя колишніх ТОП-правоохоронців",
+    url: "https://www.youtube.com/watch?v=TkWUNFB2IcM",
+  },
+  {
+    title: "Як Офіс «приручив» опозицію: договорняки, бонуси і несподівані союзи у Раді",
+    url: "https://www.youtube.com/watch?v=AuhneqQWFjk",
+  },
+  {
+    title: "ЧЕРНИК: ВИДИХАЄМО! Розвіяно ГОЛОВНИЙ МІФ про атаки РФ. ПЕРЕВОРОТ у Кремлі ВЖЕ СКОРО",
+    url: "https://www.youtube.com/watch?v=3nyvJn2Mzvc",
+  },
+  {
+    title: "Операція Павутина: неймовірна атака на авіабази РФ!",
+    url: "https://www.youtube.com/watch?v=NbmDqSuZSnI",
+  },
 ];
 
 function getYoutubeEmbedUrl(url) {
@@ -15,20 +31,20 @@ function getYoutubeEmbedUrl(url) {
 
 function Podcasts() {
   return (
-    <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">Подкасти</h1>
-      <div className="grid md:grid-cols-2 gap-6">
-        {podcasts.map((url, index) => (
-          <div key={index} className="aspect-video">
-            <iframe
-              width="100%"
-              height="100%"
-              src={getYoutubeEmbedUrl(url)}
-              title={`Podcast ${index + 1}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-xl shadow-md"
-            />
+    <div className="podcast-container">
+      <h1 className="podcast-title">Подкасти</h1>
+      <div className="podcast-grid">
+        {podcasts.map((podcast, index) => (
+          <div key={index} className="podcast-card">
+            <div className="video-wrapper">
+              <iframe
+                src={getYoutubeEmbedUrl(podcast.url)}
+                title={podcast.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <p className="podcast-caption">{podcast.title}</p>
           </div>
         ))}
       </div>

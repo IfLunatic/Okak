@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #2d3748;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  user-select: none;
+}
+
+.nav-links {
+  display: none;
+  gap: 24px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #4c51bf;
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.burger {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  gap: 6px;
+  width: 48px;
+  justify-content: center;
+  user-select: none;
+}
+
+.burger span {
+  background: white;
+  height: 4px;
+  width: 12px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.logo-image {
+  height: 100px; /* Висота логотипу, можеш підкоригувати */
+  width: auto;
+  user-select: none;
+}
+.external-link {
+  color: #6b46c1; /* або твій колір */
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+
+.external-link:hover {
+  text-decoration: underline;
+}

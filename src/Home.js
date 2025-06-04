@@ -1,4 +1,6 @@
 import React from "react";
+import "./Home.css"; // Підключення CSS
+import picture from "./assets/picture.png";
 
 const newsLinks = [
   {
@@ -33,22 +35,26 @@ const newsLinks = [
 
 function Home() {
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">Головна сторінка</h1>
-      <ul className="space-y-4">
+    <div className="home-container">
+      <h1 className="home-title">Головна сторінка</h1>
+      <ul className="home-list">
         {newsLinks.map((news, index) => (
-          <li key={index} className="bg-white shadow-md rounded-lg p-4 hover:bg-purple-50 transition">
+          <li key={index} className="home-item">
             <a
               href={news.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-700 font-medium text-lg hover:underline"
+              className="home-link"
             >
               {news.title}
             </a>
           </li>
         ))}
       </ul>
+      
+      <div className="home-image-container">
+        <img src={picture} alt="Ілюстрація" className="home-image" />
+      </div>
     </div>
   );
 }

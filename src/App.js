@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";  // імпорт меню
 
 import Login from "./Login";
 import Register from "./Register";
@@ -12,23 +12,15 @@ import Resources from "./Resources";
 function App() {
   return (
     <Router>
-     <nav>
-      <Link to="/">Головна</Link> |{" "}
-      <Link to="/login">Вхід</Link> |{" "}
-      <Link to="/register">Реєстрація</Link> |{" "}
-      <Link to="/partner-materials">Партнери</Link> |{" "}
-      <Link to="/podcasts">Подкасти</Link> |{" "}
-      <Link to="/resources">Матеріали</Link>
-    </nav>
-
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/partner-materials" element={<PartnerMaterials />} />
-      <Route path="/podcasts" element={<Podcasts />} />
-      <Route path="/resources" element={<Resources />} />
-    </Routes>
+      <Navbar />  {/* Замінюємо nav на цей компонент */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/partner-materials" element={<PartnerMaterials />} />
+        <Route path="/podcasts" element={<Podcasts />} />
+        <Route path="/resources" element={<Resources />} />
+      </Routes>
     </Router>
   );
 }

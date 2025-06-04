@@ -19,27 +19,27 @@ function Register() {
 
   const validateRegistration = () => {
     if (name.trim().length < 2) {
-      alert("Имя должно содержать минимум 2 символа");
+      alert("Ім’я повинно містити щонайменше 2 символи");
       return false;
     }
     if (surname.trim().length < 2) {
-      alert("Фамилия должна содержать минимум 2 символа");
+      alert("Прізвище повинно містити щонайменше 2 символи");
       return false;
     }
     if (username.trim().length < 2) {
-      alert("Логин должен содержать минимум 2 символа");
+      alert("Логін повинен містити щонайменше 2 символи");
       return false;
     }
     if (!isValidPhone(phoneNumber)) {
-      alert("Телефон должен начинаться с 380 и содержать 12 цифр");
+      alert("Телефон повинен починатися з 380 та містити 12 цифр");
       return false;
     }
     if (password.length < 6) {
-      alert("Пароль должен содержать минимум 6 символов");
+      alert("Пароль повинен містити щонайменше 6 символів");
       return false;
     }
     if (password !== confirmPassword) {
-      alert("Пароли не совпадают");
+      alert("Паролі не співпадають");
       return false;
     }
     return true;
@@ -63,24 +63,24 @@ function Register() {
         phoneNumber,
         password,
       });
-      alert("Регистрация успешна! Теперь войдите.");
+      alert("Реєстрація успішна! Тепер увійдіть.");
       navigate("/login");
     } catch (err) {
-      alert("Ошибка регистрации: " + err.message);
+      alert("Помилка реєстрації: " + err.message);
     }
   };
 
   return (
     <div className="container">
       <div className="form-wrapper">
-        <h1 className="title">Регистрация</h1>
+        <h1 className="title">Реєстрація</h1>
         <form onSubmit={registrationHandler} className="form">
           <div className="input-group">
             <AiOutlineUser className="icon" />
             <input
               type="text"
               className="input"
-              placeholder="Имя"
+              placeholder="Ім’я"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -91,7 +91,7 @@ function Register() {
             <input
               type="text"
               className="input"
-              placeholder="Фамилия"
+              placeholder="Прізвище"
               value={surname}
               onChange={(e) => setSurname(e.target.value)}
               required
@@ -102,7 +102,7 @@ function Register() {
             <input
               type="text"
               className="input"
-              placeholder="Логин"
+              placeholder="Логін"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -135,19 +135,19 @@ function Register() {
             <input
               type="password"
               className="input"
-              placeholder="Подтвердите пароль"
+              placeholder="Підтвердьте пароль"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </div>
           <button type="submit" className="btn">
-            Зарегистрироваться
+            Зареєструватися
           </button>
         </form>
         <div className="toggle">
           <button onClick={() => navigate("/login")} className="toggle-btn">
-            Уже есть аккаунт? Войти
+            Вже маєте акаунт? Увійдіть
           </button>
         </div>
       </div>

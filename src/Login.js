@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LuPhone } from "react-icons/lu";
 import { RiLockPasswordLine } from "react-icons/ri";
-import "./Register.css"; // подключи, если хочешь стили
+import "./Register.css"; // підключи, якщо хочеш стилі
 
 function Login() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -13,11 +13,11 @@ function Login() {
 
   const validateLogin = () => {
     if (!isValidPhone(phoneNumber)) {
-      alert("Телефон должен начинаться с 380 и содержать 12 цифр");
+      alert("Телефон повинен починатися з 380 та містити 12 цифр");
       return false;
     }
     if (password.length < 6) {
-      alert("Пароль должен содержать минимум 6 символов");
+      alert("Пароль повинен містити мінімум 6 символів");
       return false;
     }
     return true;
@@ -28,7 +28,7 @@ function Login() {
       if (phoneNumber === "380123456789" && password === "123456") {
         return { token: "abc123" };
       }
-      throw new Error("Неверные учетные данные");
+      throw new Error("Невірні облікові дані");
     },
   };
 
@@ -38,17 +38,17 @@ function Login() {
 
     try {
       const data = await fakeAuthService.login({ phoneNumber, password });
-      alert("Успешный вход! Токен: " + data.token);
+      alert("Успішний вхід! Токен: " + data.token);
       navigate("/");
     } catch (err) {
-      alert("Ошибка входа: " + err.message);
+      alert("Помилка входу: " + err.message);
     }
   };
 
   return (
     <div className="container">
       <div className="form-wrapper">
-        <h1 className="title">Вход</h1>
+        <h1 className="title">Вхід</h1>
         <form onSubmit={loginHandler} className="form">
           <div className="input-group">
             <LuPhone className="icon" />
@@ -73,12 +73,12 @@ function Login() {
             />
           </div>
           <button type="submit" className="btn">
-            Войти
+            Увійти
           </button>
         </form>
         <div className="toggle">
           <button onClick={() => navigate("/register")} className="toggle-btn">
-            Нет аккаунта? Зарегистрируйтесь
+            Немає аккаунту? Зареєструйтесь
           </button>
         </div>
       </div>
