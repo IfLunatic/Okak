@@ -8,16 +8,6 @@ function MediaLaws() {
       <ul>
         <li>
           <a
-            href="https://detector.media/infospace/article/224576/2024-03-25-shcho-novogo-peredbachaie-zakon-pro-media-na-tsey-rik-ta-yakymy-ie-pidsumky-za-mynulyy/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Що нового передбачає закон про медіа на цей рік та якими є підсумки
-            за минулий
-          </a>
-        </li>
-        <li>
-          <a
             href="https://www.unian.ua/politics/verhovna-rada-uhvalila-noviy-zakon-pro-zmi-detali-12884721.html"
             target="_blank"
             rel="noopener noreferrer"
